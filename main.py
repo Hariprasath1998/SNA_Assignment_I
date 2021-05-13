@@ -30,10 +30,14 @@ def count_unstable(all_signs):
 
 
 G = nx.Graph()
-n = 5
-G.add_nodes_from([i for i in range(1, n+1)])
-mapping = {1:'Alexandra',
-2:'Anterim', 3:'Bercy',4:'Bearland',5:'Eplex'}
+# n = 5
+# G.add_nodes_from([i for i in range(1, n+1)])
+# mapping = {1:'Alexandra',
+# 2:'Anterim', 3:'Bercy',4:'Bearland',5:'Eplex'}
+# n = 20
+Cities = ['Chennai', 'Mumbai', 'Kolkata', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad','Pune', 'Vishakapatnam', 'Kanpur', 'Surat', 'Patna', 'Jaipur', 'Coimbatore', 'Nagpur', 'Madurai', 'Salem', 'Jodhpur']
+G.add_nodes_from([i for i in range(1, len(Cities))])
+mapping = { i+1: Cities[i] for i in range(0, len(Cities)) }
 G = nx.relabel_nodes(G, mapping)
 
 signs = ['+', '-']
